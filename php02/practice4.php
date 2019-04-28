@@ -16,6 +16,7 @@ echo addsum(4,7) ."\n" ;
 //3.$arr という配列の仮引数を持ち、
 //数値が入った配列array(1, 3, 5 ,7, 9) を渡すと
 //その要素をすべてかけた結果を返す関数を作成してください。
+
 function product($arr) {
     $total = 1;
     foreach($arr as $a) {
@@ -24,11 +25,12 @@ function product($arr) {
     return $total;
 }
 
-//4.【応用】　次のプログラムは、配列の中で一番大きい値を返す 
-//max_array という関数を実装しようとしています。途中の部分を完成させてください。
 $arr = array(1,3,5,7,9);
 $hoge = product($arr);
 echo $hoge . "\n";
+
+//4.【応用】　次のプログラムは、配列の中で一番大きい値を返す 
+//max_array という関数を実装しようとしています。途中の部分を完成させてください
 
 function max_array($arr){
     $max_number = $arr[0];
@@ -45,6 +47,7 @@ $hoge = max_array($arr);
 echo $hoge . "\n";
 
 //5.次のビルトイン関数の用途、使い方を調べて実際に使ってみてください。
+
 //strip_tags
 $text = '<p>Test paragraph.</p><!-- Comment --> <a href="#fragment">Other text</a>';
 echo strip_tags($text);
