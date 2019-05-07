@@ -16,12 +16,16 @@ Route::get('/', function () {
 });
 Route::group(['prefix' => 'admin'], function() {
     Route::get('news/create', 'Admin\NewsController@add')->middleware('auth');
+    Route::post('news/create', 'Admin\NewsController@create'); # 追記
 });
 
-//PHP 12  課題提出
+
+//PHP   課題提出
 Route::group(['prefix' => 'admin'], function() {
-    Route::get('profile/create', 'Admin\ProfileController@add')->middleware('auth');;
-    Route::get('profile/edit', 'Admin\ProfileController@edit')->middleware('auth');;
+    Route::get('profile/create', 'Admin\ProfileController@add')->middleware('auth');
+    Route::post('profile/create', 'Admin\ProfileController@create');
+    Route::get('profile/edit', 'Admin\ProfileController@edit')->middleware('auth');
+    Route::post('profile/edit', 'Admin\ProfileController@update');
 });
 Auth::routes();
 
